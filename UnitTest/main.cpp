@@ -38,23 +38,19 @@ TEST(UnitTest, OCLQuery)
 			status = clGetPlatformIDs(nPlatforms, pIdx, NULL);
 	//		ADLASSERT( status == CL_SUCCESS );
 
-			cl_uint atiIdx = (cl_uint)-1;
-			cl_uint intelIdx = (cl_uint)-1;
-			cl_uint nvIdx = (cl_uint)-1;
-			cl_uint appleIdx = (cl_uint)-1;
 			for(cl_uint ie=0; ie<nPlatforms; ie++)
 			{
 				char buff[512];
 				status = clGetPlatformInfo( pIdx[ie], CL_PLATFORM_VENDOR, 512, buff, 0 );
 	//			ADLASSERT( status == CL_SUCCESS );
+				printf("%s: %s\n", (i==0)?"CPU":"GPU", buff);
 
 				cl_uint numDevice;
 				status = clGetDeviceIDs( platform, deviceType, 0, NULL, &numDevice );
 
-				printf("CL: %d %s Devices (%s)\n", (int)numDevice, (deviceType==CL_DEVICE_TYPE_GPU)? "GPU":"CPU", buff);
+				printf("CL: %d %s Devices\n", (int)numDevice, (deviceType==CL_DEVICE_TYPE_GPU)? "GPU":"CPU");
 
 				cl_device_id deviceIds[ 8 ];
-
 				status = clGetDeviceIDs( platform, deviceType, numDevice, deviceIds, NULL );
 //				ADLASSERT( status == CL_SUCCESS );
 
