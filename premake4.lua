@@ -28,6 +28,9 @@ solution "TravisCITest"
 		
 		files { "./UnitTest/*.cpp", "./gtest-1.6.0/**" } 
 			
+		if os.is("linux") then
+			links { "pthread" }
+		end
 		if _ACTION == "vs2012" then
 			defines{ "GTEST_HAS_TR1_TUPLE=0" }
 		end
