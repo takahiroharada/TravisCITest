@@ -28,15 +28,16 @@ solution "TravisCITest"
 		
 		files { "./UnitTest/*.cpp", "./gtest-1.6.0/**" } 
 			
-		links {"OpenCL"}
 		if os.is("linux") then
 			links { "pthread" }
+			links {"OpenCL"}
 		end
 		if _ACTION == "vs2012" then
 			defines{ "GTEST_HAS_TR1_TUPLE=0" }
 		end
 		
 		if os.is("macosx") then
+		   linkoptions{ "-framework OpenCL" }
 			buildoptions{"-DGTEST_USE_OWN_TR1_TUPLE=1"}
 		end
 
