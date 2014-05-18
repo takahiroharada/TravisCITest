@@ -28,6 +28,7 @@ solution "TravisCITest"
 		
 		files { "./UnitTest/*.cpp", "./gtest-1.6.0/**" } 
 			
+		links {"OpenCL"}
 		if os.is("linux") then
 			links { "pthread" }
 		end
