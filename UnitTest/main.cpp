@@ -47,7 +47,21 @@ TEST(UnitTest, OCLQuery)
 				char buff[512];
 				status = clGetPlatformInfo( pIdx[ie], CL_PLATFORM_VENDOR, 512, buff, 0 );
 	//			ADLASSERT( status == CL_SUCCESS );
-				printf("%s: %s\n", (i==0)?"CPU":"GPU", buff);
+
+				cl_uint numDevice;
+				status = clGetDeviceIDs( platform, deviceType, 0, NULL, &numDevice );
+
+				printf("CL: %d %s Devices (%s)\n", (int)numDevice, (deviceType==CL_DEVICE_TYPE_GPU)? "GPU":"CPU", buff);
+
+				cl_device_id deviceIds[ 8 ];
+
+				status = clGetDeviceIDs( platform, deviceType, numDevice, deviceIds, NULL );
+//				ADLASSERT( status == CL_SUCCESS );
+
+				status = clGetDeviceInfo( deviceIds[0], CL_DEVICE_NAME, sizeof(buff), &buff, NULL );
+//				ADLASSERT( status == CL_SUCCESS );
+
+				printf("[%s]\n", buff);				
 			}
 		}
 	}
