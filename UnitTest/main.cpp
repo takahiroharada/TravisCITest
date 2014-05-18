@@ -45,6 +45,8 @@ TEST(UnitTest, OCLQuery)
 	//			ADLASSERT( status == CL_SUCCESS );
 				printf("%s: %s\n", (i==0)?"CPU":"GPU", buff);
 
+				platform = pIdx[ie];
+				
 				cl_uint numDevice;
 				status = clGetDeviceIDs( platform, deviceType, 0, NULL, &numDevice );
 
