@@ -20,4 +20,4 @@ before_script:
   
 script:
   - make
-  - ./build/UnitTest64D
+  - sudo ./build/UnitTest64D
