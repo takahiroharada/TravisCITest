@@ -31,12 +31,24 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>
-<a id="travis-ci-test" class="anchor" href="#travis-ci-test" aria-hidden="true"><span class="octicon octicon-link"></span></a>Travis CI Test</h3>
+        <p><a href="https://travis-ci.org/takahiroharada/TravisCITest"><img src="https://travis-ci.org/takahiroharada/TravisCITest.svg?branch=master" alt="Build Status"></a></p>
 
-<h1></h1>
+<p>OpenCL execution test using Travis CI. </p>
 
-<p><a href="https://travis-ci.org/takahiroharada/TravisCITest"><img src="https://travis-ci.org/takahiroharada/TravisCITest.svg?branch=master" alt="Build Status"></a></p>
+<p>It is </p>
+
+<ul>
+<li>setting up OpenCL</li>
+<li>creating makefile using premake</li>
+<li>run unit tests</li>
+</ul>
+
+<pre><code>sudo apt-get update -qq
+
+sudo apt-get install -qq fglrx=2:8.960-0ubuntu1 fglrx-amdcccle
+
+sudo apt-get install -qq opencl-headers
+</code></pre>
       </section>
     </div>
 
