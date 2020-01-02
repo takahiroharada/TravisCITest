@@ -23,7 +23,7 @@ solution "TravisCITest"
 	configuration {}
 	project "UnitTest"
 		kind "ConsoleApp"
-		location "../UnitTest"
+		location "./UnitTest"
 		targetdir "./build"
 		
 		files { "./UnitTest/*.cpp", "./gtest-1.6.0/**" } 
