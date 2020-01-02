@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest, ubuntu-16.04]
 
     steps:
     - uses: actions/checkout@v1
@@ -18,19 +18,4 @@ jobs:
         make
         ./build/UnitTest64D
         echo test, and deploy your project.
-        
-  build:
 
-    runs-on: ubuntu-16.04
-
-    steps:
-    - uses: actions/checkout@v1
-    - name: Premake
-      run: |
-        chmod +x ./tools/premake4/linux64/premake4
-        ./tools/premake4/linux64/premake4 gmake
-    - name: Make
-      run: |
-        make
-        ./build/UnitTest64D
-        echo ubuntu-16.04
