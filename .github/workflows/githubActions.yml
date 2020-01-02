@@ -19,7 +19,7 @@ jobs:
         ./build/UnitTest64D
         echo test, and deploy your project.
   mac-build:
-    runs-on: [ubuntu-latest,macos-latest]
+    runs-on: macos-latest
     steps:
     - uses: actions/checkout@v1
     - name: Premake
