@@ -1,0 +1,17 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Premake
+      run: ./tools/premake4/linux64/premake4 gmake
+    - name: Make
+      run: make
+        echo Add other actions to build,
+        echo test, and deploy your project.
