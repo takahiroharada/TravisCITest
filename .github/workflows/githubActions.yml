@@ -14,6 +14,7 @@ jobs:
         chmod +x ./tools/premake4/linux64/premake4
         ./tools/premake4/linux64/premake4 gmake
     - name: Make
-      run: make
-        echo Add other actions to build,
+      run: |
+        make
+        ./build/UnitTest64D
         echo test, and deploy your project.
