@@ -24,6 +24,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Premake
       run: |
+        sw_vers -productVersion
         ./tools/premake4/macos/premake4 gmake
     - name: Make
       run: |
