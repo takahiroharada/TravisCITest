@@ -3,7 +3,7 @@ name: CI
 on: [push]
 
 jobs:
-   win-build:
+  win-build:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v1
@@ -16,9 +16,8 @@ jobs:
       run: |
         msbuild TravisCITest 
         echo windows. 
-
+        
   linux-build:
-
     runs-on: ubuntu-latest
 
     steps:
