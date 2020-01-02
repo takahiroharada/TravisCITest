@@ -15,6 +15,7 @@ jobs:
     - name: Make
       run: |
         msbuild TravisCITest.sln /p:Platform=X64
+        ./build/UnitTest64D
         echo windows. 
         
   linux-build:
