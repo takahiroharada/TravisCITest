@@ -3,9 +3,9 @@ name: CI
 on: [push]
 
 jobs:
-  build:
+  linux-build:
 
-    runs-on: [ubuntu-latest,macos-latest]
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v1
@@ -18,3 +18,11 @@ jobs:
         make
         ./build/UnitTest64D
         echo test, and deploy your project.
+  mac-build:
+    runs-on: [ubuntu-latest,macos-latest]
+    steps:
+    - uses: actions/checkout@v1
+    - name: Premake
+      run: |
+        chmod +x ./tools/premake4/linux64/premake4
+        echo macos.
