@@ -10,7 +10,9 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Premake
-      run: ./tools/premake4/linux64/premake4 gmake
+      run: |
+        chmod +x ./tools/premake4/linux64/premake4
+        ./tools/premake4/linux64/premake4 gmake
     - name: Make
       run: make
         echo Add other actions to build,
