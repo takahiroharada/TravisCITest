@@ -11,7 +11,7 @@ jobs:
       uses: warrenbuckley/Setup-MSBuild@v1
     - name: Premake
       run: |
-        ./tools/premake4/win64/premake5.exe vs2019
+        ./tools/premake4/win64/premake5.exe vs2017
     - name: Make
       run: |
         msbuild TravisCITest.sln /p:Platform=X64
